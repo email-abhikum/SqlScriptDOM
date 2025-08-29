@@ -1,6 +1,6 @@
-﻿DECLARE @v1 vector ( 4 ), @v2 vector(4)
-SET @v2 = CAST('[0.1, 0.1, 0.1,0.2]' as vector(4))
-SET @v1 = CONVERT(vector( 4 ), '[0.1, 0.2, 0.1, 0.2]')
+DECLARE @v1 vector ( 4 , float32 ), @v2 vector(4, float32)
+SET @v2 = CAST('[0.1, 0.1, 0.1,0.2]' as vector(4, float32))
+SET @v1 = CONVERT(vector( 4 , float32 ), '[0.1, 0.2, 0.1, 0.2]')
 
 -- VECTOR_DISTANCE
 SELECT VECTOR_DISTANCE('cosine', @v1, @v2);
