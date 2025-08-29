@@ -71,6 +71,16 @@ namespace Microsoft.SqlServer.TransactSql.ScriptDom.ScriptGenerator
         [SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
         public static string GetPascalCase(string str)
         {
+            if (str == null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (str.Length == 0)
+            {
+                return string.Empty;
+            }
+
             // Make the first letter upper case
             str = str.ToLowerInvariant();
             char firstLetter = Char.ToUpperInvariant(str[0]);
