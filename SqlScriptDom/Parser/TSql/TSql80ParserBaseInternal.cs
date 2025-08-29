@@ -2039,7 +2039,8 @@ namespace Microsoft.SqlServer.TransactSql.ScriptDom
                     break;
                 case 2:
                     if (dataType.SqlDataTypeOption != SqlDataTypeOption.Decimal &&
-                        dataType.SqlDataTypeOption != SqlDataTypeOption.Numeric)
+                        dataType.SqlDataTypeOption != SqlDataTypeOption.Numeric &&
+                        dataType.SqlDataTypeOption != SqlDataTypeOption.Vector)
                     {
                         ThrowParseErrorException("SQL46009", dataType,
                             TSqlParserResource.SQL46009Message, dataType.SqlDataTypeOption.ToString());
